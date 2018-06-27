@@ -16,12 +16,13 @@ public class BillResponseDto implements Serializable {
 	private Double finalBillAmount;
 	private Double discountPercent;
 	private String billDate;
+	private Long userId;
 	
 	public Long getUserId() {
-		return id;
+		return userId;
 	}
-	public void setUserId(Long id) {
-		this.id = id;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 	public Double getBillAmount() {
 		return billAmount;
@@ -70,7 +71,7 @@ public class BillResponseDto implements Serializable {
 	public String toString() {
 		return "BillResponseDto [id=" + id + ", billAmount=" + billAmount + ", itemType=" + itemType
 				+ ", discountAmount=" + discountAmount + ", finalBillAmount=" + finalBillAmount + ", discountPercent="
-				+ discountPercent + ", billDate=" + billDate + "]";
+				+ discountPercent + ", billDate=" + billDate + ", userId=" + userId + "]";
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -113,8 +114,14 @@ public class BillResponseDto implements Serializable {
 			return false;
 		if (itemType != other.itemType)
 			return false;
+		if (userId == null) {
+			if (other.userId != null)
+				return false;
+		} else if (!userId.equals(other.userId))
+			return false;
 		return true;
 	}
+
 	
 	
 	
