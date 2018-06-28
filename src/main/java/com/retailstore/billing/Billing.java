@@ -3,6 +3,10 @@ package com.retailstore.billing;
 import com.retailstore.domain.UserDetails;
 import com.retailstore.dto.request.BillRequestDto;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 public class Billing {
 	
 	private UserDetails userDetails;

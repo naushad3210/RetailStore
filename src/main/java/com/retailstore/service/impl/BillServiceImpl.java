@@ -15,6 +15,10 @@ import com.retailstore.factory.DiscountStrategyFactory;
 import com.retailstore.service.IBillService;
 import com.retailstore.service.IUserService;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 @Service("billService")
 public class BillServiceImpl implements IBillService {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());

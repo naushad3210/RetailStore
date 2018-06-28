@@ -1,5 +1,9 @@
 package com.retailstore.exceptions;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 public class ResourceNotFoundException extends RuntimeException {
 	private static final long serialVersionUID = -3033864417612910879L;
 	private String resourceName;

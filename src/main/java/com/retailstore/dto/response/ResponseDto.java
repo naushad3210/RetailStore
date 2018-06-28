@@ -5,7 +5,6 @@ import java.io.Serializable;
 /**
  * @author mohammadnaushad
  *
- * @param <T>
  */
 public class ResponseDto<T> implements Serializable {
 

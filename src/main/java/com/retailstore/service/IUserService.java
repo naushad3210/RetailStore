@@ -5,6 +5,10 @@ import java.util.List;
 import com.retailstore.domain.UserDetails;
 import com.retailstore.dto.request.UserRequestDto;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 public interface IUserService {
 	
 	public UserDetails fetchUserByUserId(String userId);

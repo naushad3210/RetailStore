@@ -12,10 +12,15 @@ import com.retailstore.dto.request.UserRequestDto;
 import com.retailstore.enums.UserType;
 import com.retailstore.service.IUserService;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 @Service
 public class NonGroceryDiscountStrategy extends DiscountStrategy{
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	public final int CUSTOMER_AGE_FACTOR=2;
 	
 	@Autowired
 	IUserService userService;
@@ -33,12 +38,19 @@ public class NonGroceryDiscountStrategy extends DiscountStrategy{
 		return billAmount;
 	}
 	
+	
+	/**
+	 * Method to check if the user is a customer for more than certain period
+	 * If he gets over certain period then, the user type are updated from  NEW_USER to OLD_USER
+	 * @param user
+	 * @return
+	 */
 	private Billing checkForOldUser(Billing user) {
 		LOGGER.info("-- Checking User Age With Store!");
 		if(user.getUserDetails().getUserType()==UserType.NEW_USER) {
 			LocalDate createUserInstant = user.getUserDetails().getCreateDate().toLocalDate();
 			Period period = createUserInstant.until(LocalDate.now());
-			if(period.getYears()>=2) {
+			if(period.getYears()>=CUSTOMER_AGE_FACTOR){
 				LOGGER.info("-- User is Old Now! Updating the User in DB!");
 				user.getUserDetails().setUserType(UserType.OLD_USER);
 				UserRequestDto userRequestDto= new UserRequestDto();

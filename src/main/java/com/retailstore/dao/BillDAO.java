@@ -7,7 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import com.retailstore.domain.BillDetails;
 import com.retailstore.repository.BillDetailsRepository;
-
+/**
+ * @author mohammadnaushad
+ *
+ */
 @Repository
 public class BillDAO {
 	

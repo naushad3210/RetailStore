@@ -10,11 +10,22 @@ import com.retailstore.billing.NonGroceryDiscountStrategy;
 import com.retailstore.enums.ItemType;
 import com.retailstore.exceptions.ResourceNotFoundException;
 
+/**
+ * The DiscountStrategyFactory is a factory class which creates and returns the
+ *  appropriate DiscountStrategy object based on the item type
+ *  
+ * @author mohammadnaushad
+ *
+ */
 @Component
 public class DiscountStrategyFactory {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-	//use getStrategy method to get object of itemType 
-	   public DiscountStrategy getStrategy(ItemType itemType){
+	 /**
+	  * Use getStrategy method to get object of itemType
+	 * @param itemType
+	 * @return object of type DiscountStrategy
+	 */
+	public DiscountStrategy getStrategy(ItemType itemType){
 	      if(itemType == null){
 	    	 LOGGER.error("-- Inside [DiscountStrategyFactory] [Method: getStrategy()]] ItemType is NULL !!");
 	         throw new ResourceNotFoundException("ItemType", "itemType", itemType);

@@ -6,6 +6,10 @@ import java.util.List;
 import com.retailstore.domain.UserDetails;
 import com.retailstore.dto.response.UserResponseDto;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 public class UserWrapper {
 
 	public static UserResponseDto createUserResponse(UserDetails userDetailsResponse) {

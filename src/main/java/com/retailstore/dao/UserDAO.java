@@ -12,6 +12,10 @@ import com.retailstore.dto.request.UserRequestDto;
 import com.retailstore.exceptions.ResourceNotFoundException;
 import com.retailstore.repository.UserRepository;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 @Repository
 public class UserDAO {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());

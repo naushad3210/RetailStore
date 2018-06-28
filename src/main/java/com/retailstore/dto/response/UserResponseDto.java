@@ -5,6 +5,10 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.retailstore.enums.UserType;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserResponseDto  implements Serializable{
 

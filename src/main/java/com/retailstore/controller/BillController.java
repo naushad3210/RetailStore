@@ -16,6 +16,10 @@ import com.retailstore.dto.response.ResponseDto;
 import com.retailstore.service.IBillService;
 import com.retailstore.wrapper.BillWrapper;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 @RestController
 public class BillController {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());

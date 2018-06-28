@@ -5,6 +5,10 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.retailstore.enums.ItemType;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BillResponseDto implements Serializable {
 
@@ -16,12 +20,12 @@ public class BillResponseDto implements Serializable {
 	private Double finalBillAmount;
 	private Double discountPercent;
 	private String billDate;
-	private Long userId;
+	private String userId;
 	
-	public Long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(Long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	public Double getBillAmount() {
@@ -122,8 +126,4 @@ public class BillResponseDto implements Serializable {
 		return true;
 	}
 
-	
-	
-	
-	
 }

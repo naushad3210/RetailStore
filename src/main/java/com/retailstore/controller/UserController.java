@@ -20,6 +20,10 @@ import com.retailstore.dto.response.UserResponseDto;
 import com.retailstore.service.IUserService;
 import com.retailstore.wrapper.UserWrapper;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 @RestController
 public class UserController {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());

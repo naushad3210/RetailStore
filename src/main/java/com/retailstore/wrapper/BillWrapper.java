@@ -3,6 +3,10 @@ package com.retailstore.wrapper;
 import com.retailstore.domain.BillDetails;
 import com.retailstore.dto.response.BillResponseDto;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 public class BillWrapper {
 	
 	public static BillResponseDto createBillResponse(BillDetails billDetailsResponse) {
@@ -10,10 +14,10 @@ public class BillWrapper {
 		billResponseDto.setBillAmount(billDetailsResponse.getBillAmount());
 		billResponseDto.setDiscountAmount(billDetailsResponse.getDiscountAmount());
 		billResponseDto.setDiscountPercent(billDetailsResponse.getDiscountPercent());
-		billResponseDto.setFinalBillAmount(billDetailsResponse.getFinalBillAmount());
+		billResponseDto.setFinalBillAmount(Math.round(billDetailsResponse.getFinalBillAmount()*100D)/100D);
 		billResponseDto.setItemType(billDetailsResponse.getItemType());
 		billResponseDto.setId(billDetailsResponse.getId());
-		billResponseDto.setUserId(billDetailsResponse.getUserFk().getId());
+		billResponseDto.setUserId(billDetailsResponse.getUserFk().getUserId());
 		billResponseDto.setBillDate(billDetailsResponse.getCreateDate()+"");
 		
 		return billResponseDto;

@@ -2,14 +2,20 @@ package com.retailstore.billing;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.stereotype.Service;
+/**
+ *
+ * @author mohammadnaushad
+ * 
+ */
+@Service
 public abstract class DiscountStrategy {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	public abstract Double calculateFinalBillAmount(Billing user);
 	
 	private final int DISOCUNT_FACTOR=5;
-	private final double DISOCUNT_QUOTIENT=100.0;
+	private final int DISOCUNT_QUOTIENT=100;
 	
 	protected Double extraDiscount(Double billAmount) {
 		int extraDiscountAmount=0;

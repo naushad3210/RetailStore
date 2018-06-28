@@ -13,6 +13,10 @@ import com.retailstore.domain.UserDetails;
 import com.retailstore.dto.request.UserRequestDto;
 import com.retailstore.service.IUserService;
 
+/**
+ * @author mohammadnaushad
+ *
+ */
 @Service("userService")
 public class UserServiceImpl implements IUserService {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
