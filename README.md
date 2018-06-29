@@ -37,7 +37,7 @@ Running Test Cases
 3) To run single test (eg. TestClassName), issue this command :
 	mvn -Dtest=TestClassName test
 4) All the test classes in the application are:
-	BillControllerTesting, BillDaoTesting, BillServiceTesting, DiscountStrategyFactoryTesting, UserControllerTesting, UserDaoTesting, UserServiceTesting
+	BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, UserControllerTest, UserDaoTest, UserServiceTest
   
   
 Coverage Report
