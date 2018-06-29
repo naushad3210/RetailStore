@@ -42,7 +42,8 @@ Running Test Cases
   
 Coverage Report
 
-1) Readable code coverage reports for the execution of the above test cases is generated in several formats – e.g. HTML, CSV, and XML. in the directory "RetailStore\target\site\jacoco"
-2) The binary format in the target directory – target/jacoco.exec. can also be sent to Sonar Qube for generating the coverage report.
+1) Issue command "mvn clean verify"
+2) Readable code coverage reports for the execution of the above test cases is generated in several formats – e.g. HTML, CSV, and XML. in the directory "RetailStore\target\site\jacoco"
+3) The binary format in the target directory – target/jacoco.exec. can also be sent to Sonar Qube for generating the coverage report.
 
 
