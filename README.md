@@ -43,7 +43,13 @@ Running Test Cases
 Coverage Report
 
 1) Issue command "mvn clean verify"
-2) Readable code coverage reports for the execution of the above test cases is generated in several formats – e.g. HTML, CSV, and XML. in the directory "RetailStore\target\site\jacoco"
+2) Readable code coverage reports for the execution of the above test cases is generated in several formats – e.g. HTML, CSV, and XML. in the directory "{}\RetailStore\target\site\jacoco"
 3) The binary format in the target directory – target/jacoco.exec. can also be sent to Sonar Qube for generating the coverage report.
 
+Sonar Analysis
+1) For sonar analysis, sonar should be accessible(installed)
+2) Set the attributes <sonar.jacoco.reportPaths> and <sonar.host.url> in the pom.xml
+3) On command prompt, issue the following command from the project base directory
+	mvn clean install sonar:sonar
+this command will run the tests, build the war file and trigger the sonar analysis.
 
