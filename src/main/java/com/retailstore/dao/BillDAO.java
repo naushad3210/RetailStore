@@ -14,7 +14,7 @@ import com.retailstore.repository.BillDetailsRepository;
 @Repository
 public class BillDAO {
 	
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private static final Logger LOGGER = LoggerFactory.getLogger(BillDAO.class);
 	
 	@Autowired
 	private BillDetailsRepository billDetailsRepository;

@@ -26,7 +26,7 @@ public class ExceptionHandlingController {
         response.setErrorCode("Validation Error");
         response.setErrorMessage("Invalid inputs.");
         response.setErrors(ValidationUtil.fromBindingErrors(result));
-        return new ResponseEntity<ExceptionResponseDto>(response, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
     
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -35,7 +35,7 @@ public class ExceptionHandlingController {
         response.setErrorCode("Not Found");
         response.setErrorMessage(ex.getMessage());
  
-        return new ResponseEntity<ExceptionResponseDto>(response, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
     
     @ExceptionHandler({SQLException.class,HibernateException.class})
@@ -43,7 +43,7 @@ public class ExceptionHandlingController {
     	ExceptionResponseDto response = new ExceptionResponseDto();
         response.setErrorCode("Database Error");
         response.setErrorMessage(ex.getMessage());
-        return new ResponseEntity<ExceptionResponseDto>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     
     @ExceptionHandler({Exception.class})
@@ -51,6 +51,6 @@ public class ExceptionHandlingController {
     	ExceptionResponseDto response = new ExceptionResponseDto();
         response.setErrorCode("There is a problem! Please contact administrator!");
         response.setErrorMessage(ex.getMessage());
-        return new ResponseEntity<ExceptionResponseDto>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

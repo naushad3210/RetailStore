@@ -18,7 +18,8 @@ import com.retailstore.repository.UserRepository;
  */
 @Repository
 public class UserDAO {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserDAO.class);
 	
 	@Autowired
 	UserRepository userRepository;

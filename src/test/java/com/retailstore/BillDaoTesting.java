@@ -9,6 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.retailstore.dao.BillDAO;
@@ -24,6 +26,8 @@ import com.retailstore.repository.BillDetailsRepository;
 @SpringBootTest
 public class BillDaoTesting {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(BillDaoTesting.class);
+	
 	@Mock
 	BillDetailsRepository billDetailsRepositoryMock;
 	
@@ -32,6 +36,7 @@ public class BillDaoTesting {
 	
 	@Test
 	public void persistBillTest() {
+		LOGGER.info("-- Testing [BillDaoTesting] [Method: persistBillTest()]");
 		when(billDetailsRepositoryMock.save(Mockito.any(BillDetails.class))).thenReturn(BillDataStub.billDetails());
         assertEquals(BillDataStub.billDetails(),billDaoMock.persistBill(BillDataStub.billDetails()));
     }

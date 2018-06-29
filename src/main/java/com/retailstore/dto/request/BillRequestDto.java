@@ -25,22 +25,27 @@ public class BillRequestDto implements Serializable {
 	public String getUserId() {
 		return userId;
 	}
+
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+
 	public Double getBillAmount() {
 		return billAmount;
 	}
+
 	public void setBillAmount(Double billAmount) {
 		this.billAmount = billAmount;
 	}
+
 	public ItemType getItemType() {
 		return itemType;
 	}
+
 	public void setItemType(ItemType itemType) {
 		this.itemType = itemType;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "BillDto [userId=" + userId + ", billAmount=" + billAmount + ", itemType=" + itemType + "]";

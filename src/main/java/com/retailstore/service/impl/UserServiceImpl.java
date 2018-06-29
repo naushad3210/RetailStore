@@ -19,7 +19,9 @@ import com.retailstore.service.IUserService;
  */
 @Service("userService")
 public class UserServiceImpl implements IUserService {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+	
 	@Autowired
 	UserDAO userDao;
 

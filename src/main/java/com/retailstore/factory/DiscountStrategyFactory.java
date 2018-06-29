@@ -19,8 +19,10 @@ import com.retailstore.exceptions.ResourceNotFoundException;
  */
 @Component
 public class DiscountStrategyFactory {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-	 /**
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(DiscountStrategyFactory.class);
+	
+	/**
 	  * Use getStrategy method to get object of itemType
 	 * @param itemType
 	 * @return object of type DiscountStrategy

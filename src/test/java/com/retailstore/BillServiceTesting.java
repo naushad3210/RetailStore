@@ -9,6 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.retailstore.dao.BillDAO;
@@ -28,6 +30,8 @@ import com.retailstore.service.impl.BillServiceImpl;
 @SpringBootTest
 public class BillServiceTesting {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(BillServiceTesting.class);
+	
 	@Mock
 	BillDAO billDaoMock;
 	
@@ -42,6 +46,7 @@ public class BillServiceTesting {
 	
 	@Test
 	public void generateBillNonGroceryTest() {
+		LOGGER.info("-- Testing [BillServiceTesting] [Method: generateBillNonGroceryTest()]");
 		when(userServiceMock.fetchUserByUserId(Mockito.any(String.class))).thenReturn(UserDataStub.userDetails());
 		when(discountStrategyFactoryMock.getStrategy(Mockito.any(ItemType.class))).thenReturn(BillDataStub.billingMockObj(ItemType.OTHER));
 		when(billDaoMock.persistBill(Mockito.any(BillDetails.class))).thenReturn(BillDataStub.billDetails());
@@ -50,6 +55,7 @@ public class BillServiceTesting {
 	
 	@Test
 	public void generateBillGroceryTest() {
+		LOGGER.info("-- Testing [BillServiceTesting] [Method: generateBillGroceryTest()]");
 		when(userServiceMock.fetchUserByUserId(Mockito.any(String.class))).thenReturn(UserDataStub.userDetails());
 		when(discountStrategyFactoryMock.getStrategy(Mockito.any(ItemType.class))).thenReturn(BillDataStub.billingMockObj(ItemType.GROCERY));
 		when(billDaoMock.persistBill(Mockito.any(BillDetails.class))).thenReturn(BillDataStub.billDetails());
@@ -58,6 +64,7 @@ public class BillServiceTesting {
 	
 	@Test(expected = NullPointerException.class)
 	public void generateBillGroceryNullTest() {
+		LOGGER.info("-- Testing [BillServiceTesting] [Method: generateBillGroceryNullTest()]");
 		when(userServiceMock.fetchUserByUserId(Mockito.any(String.class))).thenReturn(UserDataStub.userDetails());
         assertEquals(BillDataStub.billDetails(),billServiceMock.generateBill(BillDataStub.billRequestDto(null)));
     }

@@ -1,5 +1,6 @@
 package com.retailstore.dto.response;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -9,9 +10,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ExceptionResponseDto {
+public class ExceptionResponseDto implements Serializable{
 	 
-    private String errorCode;
+	private static final long serialVersionUID = 639078131209743803L;
+	private String errorCode;
     private String errorMessage;
     private List<String> errors;
 	public String getErrorCode() {
@@ -31,6 +33,16 @@ public class ExceptionResponseDto {
 	}
 	public void setErrors(List<String> errors) {
 		this.errors = errors;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((errorCode == null) ? 0 : errorCode.hashCode());
+		result = prime * result + ((errorMessage == null) ? 0 : errorMessage.hashCode());
+		result = prime * result + ((errors == null) ? 0 : errors.hashCode());
+		return result;
 	}
 	@Override
 	public boolean equals(Object obj) {

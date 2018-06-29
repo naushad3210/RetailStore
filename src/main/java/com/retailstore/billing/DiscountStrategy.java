@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 @Service
 public abstract class DiscountStrategy {
 	
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-	public abstract Double calculateFinalBillAmount(Billing user);
+	private static final Logger LOGGER = LoggerFactory.getLogger(DiscountStrategy.class);
+	public abstract Double calculateFinalBillAmount(Billing bill);
 	
-	private final int DISOCUNT_FACTOR=5;
-	private final int DISOCUNT_QUOTIENT=100;
+	private static final int DISOCUNT_FACTOR=5;
+	private static final int DISOCUNT_QUOTIENT=100;
 	
 	protected Double extraDiscount(Double billAmount) {
 		int extraDiscountAmount=0;

@@ -22,7 +22,9 @@ import com.retailstore.wrapper.BillWrapper;
  */
 @RestController
 public class BillController {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(BillController.class);
+	
 	@Autowired
 	IBillService billService;
 	

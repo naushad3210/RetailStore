@@ -25,7 +25,15 @@ public class ResponseDto<T> implements Serializable {
 		return "ResponseDto [body=" + body + "]";
 	}
 
-	@SuppressWarnings("rawtypes")
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((body == null) ? 0 : body.hashCode());
+		return result;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -34,6 +42,7 @@ public class ResponseDto<T> implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
+		@SuppressWarnings("rawtypes")
 		ResponseDto other = (ResponseDto) obj;
 		if (body == null) {
 			if (other.body != null)

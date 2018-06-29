@@ -21,7 +21,9 @@ import com.retailstore.service.IUserService;
  */
 @Service("billService")
 public class BillServiceImpl implements IBillService {
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(BillServiceImpl.class);
+	
 	@Autowired
 	BillDAO billDao;
 	

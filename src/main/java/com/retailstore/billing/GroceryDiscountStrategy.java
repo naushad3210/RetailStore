@@ -10,12 +10,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class GroceryDiscountStrategy  extends DiscountStrategy{
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(GroceryDiscountStrategy.class);
 	
 	@Override
-	public Double calculateFinalBillAmount(Billing user) {
+	public Double calculateFinalBillAmount(Billing bill) {
 		LOGGER.info("-- Inside [GroceryDiscountStrategy] [Method: calculateFinalBillAmount()]");
-		Double billAmount=user.getBillDto().getBillAmount();
+		Double billAmount=bill.getBillDto().getBillAmount();
 		
 		billAmount -= extraDiscount(billAmount);
 		LOGGER.info("-- Leaving [GroceryDiscountStrategy] [Method: calculateFinalBillAmount()] with [Final Bill Amount: {}]",billAmount);

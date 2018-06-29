@@ -64,30 +64,31 @@ public class UserDetails{
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public UserType getUserType() {
-		return userType;
-	}
-	public void setUserType(UserType userType) {
-		this.userType = userType;
-	}
-	public Set<BillDetails> getBillDetails() {
-		return billDetails;
-	}
-	public void setBillDetails(Set<BillDetails> billDetails) {
-		this.billDetails = billDetails;
-	}
+
 	public Date getCreateDate() {
 		return createDate;
 	}
+
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
@@ -100,12 +101,34 @@ public class UserDetails{
 		this.lastUpdated = lastUpdated;
 	}
 
-	public String getUserId() {
-		return userId;
+	public UserType getUserType() {
+		return userType;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserType(UserType userType) {
+		this.userType = userType;
+	}
+
+	public Set<BillDetails> getBillDetails() {
+		return billDetails;
+	}
+
+	public void setBillDetails(Set<BillDetails> billDetails) {
+		this.billDetails = billDetails;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((billDetails == null) ? 0 : billDetails.hashCode());
+		result = prime * result + ((createDate == null) ? 0 : createDate.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((lastUpdated == null) ? 0 : lastUpdated.hashCode());
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		result = prime * result + ((userType == null) ? 0 : userType.hashCode());
+		return result;
 	}
 
 	@Override
