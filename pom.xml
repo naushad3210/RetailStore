@@ -22,7 +22,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<sonar.sources>src/main/java</sonar.sources>
+		<sonar.tests>src/test/java</sonar.tests>
+
+		<!-- Below property indicates the pattern of the test suite -->
+		<runSuite>**/*Suite.class</runSuite>
+		<!-- Sonar-JaCoCo properties -->
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.jacoco.reportPaths>E:/MyWorkspace/RetailStore/target/jacoco.exec</sonar.jacoco.reportPaths>
+		<sonar.language>java</sonar.language>
 	</properties>
+
 
 	<dependencies>
 		<dependency>
@@ -53,13 +64,20 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.codehaus.sonar/sonar-maven-plugin -->
-		<dependency>
-			<groupId>org.codehaus.sonar</groupId>
-			<artifactId>sonar-maven-plugin</artifactId>
-			<version>5.1</version>
-		</dependency>
 	</dependencies>
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.host.url>
+					http://localhost:9000
+				</sonar.host.url>
+			</properties>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
@@ -71,8 +89,13 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.7.7.201606060606</version>
+				<configuration>
+					<destFile>${sonar.jacoco.reportPath}</destFile>
+					<append>true</append>
+				</configuration>
 				<executions>
 					<execution>
+						<id>agent</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
