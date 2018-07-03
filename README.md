@@ -12,10 +12,10 @@ Script to Build Project:
 APIs details:
 
 1) To create user
-	endPoint: http://{host}:{port}/RetailStore/user
+	``endPoint: http://{host}:{port}/RetailStore/user
 	requestType: POST
 	headers: Content-Type:application/json
-	requestParameters: [userId: STRING, userName: STRING, userType: STRING of UserType]
+	requestParameters: [userId: STRING, userName: STRING, userType: STRING of UserType]``
 
 2) To get user
 	endPoint: http://{host}:{port}/RetailStore/user/{userId}
