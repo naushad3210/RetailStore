@@ -59,8 +59,8 @@ Generate Bill
 	mvn -Dtest=TestClassName test  
  ```
  
- All the test classes in the application are:  
-        BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, UserControllerTest, UserDaoTest, UserServiceTest
+All the test classes in the application are:	
+BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, UserControllerTest, UserDaoTest, UserServiceTest
   
 ## Coverage Report
 
