@@ -52,34 +52,34 @@ Generate Bill
 ## Running Test Cases
 
 ```
-Open command propmt. Then switch the directory to {localPath}/RetailStore. Please verify that the pom.xml is present in this directory.  
-To run the entire unit test, issue this command :  
+1) Open command propmt. Then switch the directory to {localPath}/RetailStore. Please verify that the pom.xml is present in this directory.  
+2) To run the entire unit test, issue this command :  
 	mvn test  
-To run single test (eg. TestClassName), issue this command :  
+3) To run single test (eg. TestClassName), issue this command :  
 	mvn -Dtest=TestClassName test  
-All the test classes in the application are:  
+** All the test classes in the application are:  
 	BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, UserControllerTest, UserDaoTest, UserServiceTest
   ```
   
 ## Coverage Report
 
 ```
-Open command propmt. Then switch the directory to {localPath}/RetailStore. Please verify that the pom.xml is present in this directory.  
-Issue command  
+1) Open command propmt. Then switch the directory to {localPath}/RetailStore. Please verify that the pom.xml is present in this directory.  
+2) Issue command  
 	mvn clean verify  
-Readable code coverage reports for the execution of the above test cases is generated in several formats – e.g. HTML, CSV, and XML. in the directory "{}\RetailStore\target\site\jacoco"  
-The binary format in the target directory – target/jacoco.exec. can also be sent to Sonar Qube for generating the coverage report.
+3) Readable code coverage reports for the execution of the above test cases is generated in several formats – e.g. HTML, CSV, and XML. in the directory "{}\RetailStore\target\site\jacoco"  
+4) The binary format in the target directory – target/jacoco.exec. can also be sent to Sonar Qube for generating the coverage report.
 ```
 
 ## Sonar Analysis
 For SonarQuabe analysis, SonarQube should be accessible(installed)
 ```
-Set the attributes in the pom.xml  
-	* <sonar.jacoco.reportPaths> - path to dir where jacoco.exec is saved.
-	* <sonar.host.url> - url where SonarQube is running.
+1) Set the attributes in the pom.xml  
+	** <sonar.jacoco.reportPaths> - path to dir where jacoco.exec is saved.
+	** <sonar.host.url> - url where SonarQube is running.
 
-On command prompt, issue the following command from the project base directory  
+2) On command prompt, issue the following command from the project base directory  
 	mvn clean install sonar:sonar  
-this command will run the tests, build the war file and trigger the sonar analysis.
+   this command will run the tests, build the war file and trigger the sonar analysis.
 ```
 
