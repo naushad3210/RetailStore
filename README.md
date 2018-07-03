@@ -57,9 +57,10 @@ Generate Bill
 	mvn test  
 3) To run single test (eg. TestClassName), issue this command :  
 	mvn -Dtest=TestClassName test  
-* All the test classes in the application are:  
-	BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, UserControllerTest, UserDaoTest, UserServiceTest
-  ```
+ ```
+ 
+ All the test classes in the application are:  
+        BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, UserControllerTest, UserDaoTest, UserServiceTest
   
 ## Coverage Report
 
@@ -75,8 +76,8 @@ Generate Bill
 For SonarQuabe analysis, SonarQube should be accessible(installed)
 ```
 1) Set the attributes in the pom.xml  
-	* <sonar.jacoco.reportPaths> - path to dir where jacoco.exec is saved.
-	* <sonar.host.url> - url where SonarQube is running.
+	<sonar.jacoco.reportPaths> - path to dir where jacoco.exec is saved.
+	<sonar.host.url> - url where SonarQube is running.
 
 2) On command prompt, issue the following command from the project base directory  
 	mvn clean install sonar:sonar  
