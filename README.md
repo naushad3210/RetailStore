@@ -1,6 +1,6 @@
 # RetailStore
 
-Retails store is a module that calculates the net payble amount for agiven bill. It is responsible for calculating the applicable discounts on the items and then process the final bill amount.
+Retails store is a module that calculates the net payble amount for a given bill. It is responsible for calculating the applicable discount on the items and then calculate the final bill amount.
 
 ## Getting Started
 
@@ -62,7 +62,8 @@ Generate Bill
 All the test classes in the application are:  
 BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, UserControllerTest, UserDaoTest, UserServiceTest
   
-## Coverage Report
+## Code Coverage Report  
+This section explains how the code coverage report can be generated using JaCoCo plugin.
 
 ```
 1) Open command propmt. Then switch the directory to {localPath}/RetailStore. Please verify that the pom.xml is present in this directory.  
@@ -72,8 +73,8 @@ BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, U
 4) The binary format in the target directory – target/jacoco.exec. can also be sent to Sonar Qube for generating the coverage report.
 ```
 
-## Sonar Analysis
-For SonarQuabe analysis, SonarQube should be accessible(installed)
+## SonarQube Analysis
+This section explains how the code quality analysis report can be generated using SonarQube. For SonarQuabe analysis, SonarQube should be accessible(installed)
 ```
 1) Set the attributes in the pom.xml  
 	<sonar.jacoco.reportPaths> - path to dir where jacoco.exec is saved.
@@ -82,5 +83,6 @@ For SonarQuabe analysis, SonarQube should be accessible(installed)
 2) On command prompt, issue the following command from the project base directory  
 	mvn clean install sonar:sonar  
    this command will run the tests, build the war file and trigger the sonar analysis.
+3) Quality report can be viewed by accessing the <sonar.host.url>
 ```
 
