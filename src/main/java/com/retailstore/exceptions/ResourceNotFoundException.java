@@ -1,10 +1,12 @@
 package com.retailstore.exceptions;
 
+import java.io.Serializable;
+
 /**
  * @author mohammadnaushad
  *
  */
-public class ResourceNotFoundException extends RuntimeException {
+public class ResourceNotFoundException extends RuntimeException implements Serializable{
 	
 	private static final long serialVersionUID = -3033864417612910879L;
 	private final String resourceName;
