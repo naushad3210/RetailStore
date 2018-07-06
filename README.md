@@ -20,10 +20,9 @@ Script to Build Project:
 ```
 1) Open command propmt, then switch to directory {dir}/RetailStore. Please verify that the pom.xml is present in this directory.
 2) Run the command "mvn clean install"
-3) Check the target folder for the generated war file named "RetailStore-0.0.1-SNAPSHOT.war"
-4) Rename the file to RetailStore.war
-5) Place the RetailStore.war file to tomcat/webapps  folder
-6) Start Tomcat.
+3) Check the target folder for the generated war file named "RetailStore.war"
+4) Place the RetailStore.war file to tomcat/webapps  folder
+5) Start Tomcat.
 ```
 
 ### APIs Details
