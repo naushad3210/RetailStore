@@ -1,0 +1,9 @@
+FROM maven:latest AS mavenbuild
+COPY . /retailstore
+WORKDIR /retailstore
+RUN mvn clean install 
+
+FROM tomcat:8.0.20-jre8
+WORKDIR /retailstore
+COPY --from=mavenbuild target/*.war /usr/local/tomcat/webapps/
+EXPOSE 8080
