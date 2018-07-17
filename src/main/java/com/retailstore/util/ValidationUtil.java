@@ -20,5 +20,4 @@ public class ValidationUtil {
 		}
 		return errorsList;
 	}
-
 }
