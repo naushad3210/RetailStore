@@ -24,7 +24,6 @@ public class ResponseDto<T> implements Serializable {
 	public String toString() {
 		return "ResponseDto [body=" + body + "]";
 	}
-
 	
 	@Override
 	public int hashCode() {
@@ -51,5 +50,4 @@ public class ResponseDto<T> implements Serializable {
 			return false;
 		return true;
 	}
-	
 }

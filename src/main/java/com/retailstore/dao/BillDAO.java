@@ -23,5 +23,4 @@ public class BillDAO {
 		LOGGER.info("-- Inside [BillDAO] [Method: persistBill()] with [Data:{}]",billDetails.getFinalBillAmount());
 		return billDetailsRepository.save(billDetails);
 	}
-
 }

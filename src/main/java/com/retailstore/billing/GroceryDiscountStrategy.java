@@ -23,5 +23,4 @@ public class GroceryDiscountStrategy  extends DiscountStrategy{
 		
 		return billAmount;
 	}
-
 }

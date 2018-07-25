@@ -27,25 +27,11 @@ Script to Build Project:
 
 ### APIs Details
 ```
-To create user  
-	endPoint: http://{host}:{port}/RetailStore/user  
-	requestType: POST  
-	headers: Content-Type:application/json  
-	requestParameters: [userId: STRING, userName: STRING, userType: STRING of UserType]
-```
-```
-To get user  
-	endPoint: http://{host}:{port}/RetailStore/user/{userId}  
-	requestType: GET  
-	headers: Content-Type:application/json  
-	queryParameters: [userId: STRING]  
-```
-```
 Generate Bill  
 	endPoint: http://{host}:{port}/RetailStore/bill  
 	requestType: POST  
 	headers: Content-Type:application/json  
-	requestParameters: [userId: STRING, billAmount: DOUBLE, itemType: STRING of ItemType]  
+	requestBody: [userId: STRING, billAmount: DOUBLE, itemType: STRING of ItemType,userType: STRING of UserType]  
 ```
 
 ## Running Test Cases
@@ -59,7 +45,7 @@ Generate Bill
  ```
  
 All the test classes in the application are:  
-BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest, UserControllerTest, UserDaoTest, UserServiceTest
+BillControllerTest, BillDaoTest, BillServiceTest, DiscountStrategyFactoryTest
   
 ## Code Coverage Report  
 This section explains how the code coverage report can be generated using JaCoCo plugin.

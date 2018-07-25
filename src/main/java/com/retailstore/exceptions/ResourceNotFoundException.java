@@ -31,5 +31,4 @@ public class ResourceNotFoundException extends RuntimeException implements Seria
     public Object getFieldValue() {
         return fieldValue;
     }
-    
 }

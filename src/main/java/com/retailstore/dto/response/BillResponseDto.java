@@ -155,5 +155,4 @@ public class BillResponseDto implements Serializable {
 			return false;
 		return true;
 	}
-
 }

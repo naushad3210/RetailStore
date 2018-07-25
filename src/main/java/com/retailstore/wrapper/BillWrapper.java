@@ -8,7 +8,6 @@ import com.retailstore.dto.response.BillResponseDto;
  *
  */
 public class BillWrapper {
-	
 	public static BillResponseDto createBillResponse(BillDetails billDetailsResponse) {
 		BillResponseDto billResponseDto = new BillResponseDto();
 		billResponseDto.setBillAmount(billDetailsResponse.getBillAmount());
@@ -17,10 +16,8 @@ public class BillWrapper {
 		billResponseDto.setFinalBillAmount(Math.round(billDetailsResponse.getFinalBillAmount()*100D)/100D);
 		billResponseDto.setItemType(billDetailsResponse.getItemType());
 		billResponseDto.setId(billDetailsResponse.getId());
-		billResponseDto.setUserId(billDetailsResponse.getUserFk().getUserId());
 		billResponseDto.setBillDate(billDetailsResponse.getCreateDate()+"");
-		
+		billResponseDto.setUserId(billDetailsResponse.getUserId());
 		return billResponseDto;
 	}
-	
 }

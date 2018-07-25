@@ -9,11 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.retailstore.billing.Billing;
 import com.retailstore.dao.BillDAO;
 import com.retailstore.domain.BillDetails;
-import com.retailstore.domain.UserDetails;
 import com.retailstore.dto.request.BillRequestDto;
 import com.retailstore.factory.DiscountStrategyFactory;
 import com.retailstore.service.IBillService;
-import com.retailstore.service.IUserService;
 
 /**
  * @author mohammadnaushad
@@ -28,27 +26,21 @@ public class BillServiceImpl implements IBillService {
 	BillDAO billDao;
 	
 	@Autowired
-	IUserService userService;
-	
-	@Autowired
 	DiscountStrategyFactory discountStrategyFactory;
 	
 	@Transactional
 	public BillDetails generateBill(BillRequestDto billRequestDto) {
 		LOGGER.info("-- Inside [BillServiceImpl] [Method: generateBill()] with [Data:{}]",billRequestDto);
-		UserDetails userDetails= userService.fetchUserByUserId(billRequestDto.getUserId());
 
-		Billing billing = new Billing(discountStrategyFactory.getStrategy(billRequestDto.getItemType()),userDetails,billRequestDto);
+		Billing billing = new Billing(discountStrategyFactory.getStrategy(billRequestDto.getItemType()),billRequestDto);
 		Double finalBillAmount = billing.calculateFinalBillAmount();
 		
 		BillDetails billDetails = new BillDetails();
 		billDetails.setItemType(billRequestDto.getItemType());
-		billDetails.setUserFk(userDetails);
 		billDetails.setBillAmount(billRequestDto.getBillAmount());
 		billDetails.setDiscountAmount(billRequestDto.getBillAmount()-finalBillAmount);
 		billDetails.setFinalBillAmount(finalBillAmount);
-		
+		billDetails.setUserId(billRequestDto.getUserId());
 		return billDao.persistBill(billDetails);
 	}
-
 }

@@ -35,7 +35,6 @@ public class BillController {
 		
 		ResponseDto<BillResponseDto> billResponse= new ResponseDto<>();
 		billResponse.setBody(BillWrapper.createBillResponse(billDetailsResponse));
-	 
 		return billResponse;
 	}
 }

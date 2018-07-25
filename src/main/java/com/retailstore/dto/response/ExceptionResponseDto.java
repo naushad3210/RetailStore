@@ -70,6 +70,4 @@ public class ExceptionResponseDto implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 }

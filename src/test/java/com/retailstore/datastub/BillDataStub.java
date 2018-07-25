@@ -10,6 +10,7 @@ import com.retailstore.dto.request.BillRequestDto;
 import com.retailstore.dto.response.BillResponseDto;
 import com.retailstore.dto.response.ResponseDto;
 import com.retailstore.enums.ItemType;
+import com.retailstore.enums.UserType;
 
 public class BillDataStub {
 	private static final Date billCreateDate= new Date(System.currentTimeMillis());
@@ -18,6 +19,7 @@ public class BillDataStub {
 		BillRequestDto billRequestDto = new BillRequestDto();
 		billRequestDto.setBillAmount(1000.0);
 		billRequestDto.setItemType(itemType);
+		billRequestDto.setUserType(UserType.NEW_USER);
 		billRequestDto.setUserId("999999999");
 		return billRequestDto;
 	}
@@ -26,11 +28,11 @@ public class BillDataStub {
 		BillDetails billDetails = new BillDetails();
 		billDetails.setId(200);
 		billDetails.setItemType(ItemType.OTHER);
-		billDetails.setUserFk(UserDataStub.userDetails());
 		billDetails.setBillAmount(1000.0);
 		billDetails.setDiscountAmount(335.0);
 		billDetails.setFinalBillAmount(665.0);
 		billDetails.setCreateDate(billCreateDate);
+		billDetails.setUserId("999999999");
 		return billDetails;
 	}
 	
@@ -60,6 +62,4 @@ public class BillDataStub {
 		else
 			return null;
 	}
-	
-
 }

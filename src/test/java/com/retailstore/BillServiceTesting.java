@@ -15,11 +15,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.retailstore.dao.BillDAO;
 import com.retailstore.datastub.BillDataStub;
-import com.retailstore.datastub.UserDataStub;
 import com.retailstore.domain.BillDetails;
 import com.retailstore.enums.ItemType;
 import com.retailstore.factory.DiscountStrategyFactory;
-import com.retailstore.service.IUserService;
 import com.retailstore.service.impl.BillServiceImpl;
 
 /**
@@ -36,9 +34,6 @@ public class BillServiceTesting {
 	BillDAO billDaoMock;
 	
 	@Mock
-	IUserService userServiceMock;
-	
-	@Mock
 	DiscountStrategyFactory discountStrategyFactoryMock;
 	
 	@InjectMocks
@@ -47,7 +42,6 @@ public class BillServiceTesting {
 	@Test
 	public void generateBillNonGroceryTest() {
 		LOGGER.info("-- Testing [BillServiceTesting] [Method: generateBillNonGroceryTest()]");
-		when(userServiceMock.fetchUserByUserId(Mockito.any(String.class))).thenReturn(UserDataStub.userDetails());
 		when(discountStrategyFactoryMock.getStrategy(Mockito.any(ItemType.class))).thenReturn(BillDataStub.billingMockObj(ItemType.OTHER));
 		when(billDaoMock.persistBill(Mockito.any(BillDetails.class))).thenReturn(BillDataStub.billDetails());
         assertEquals(BillDataStub.billDetails(),billServiceMock.generateBill(BillDataStub.billRequestDto(ItemType.OTHER)));
@@ -56,7 +50,6 @@ public class BillServiceTesting {
 	@Test
 	public void generateBillGroceryTest() {
 		LOGGER.info("-- Testing [BillServiceTesting] [Method: generateBillGroceryTest()]");
-		when(userServiceMock.fetchUserByUserId(Mockito.any(String.class))).thenReturn(UserDataStub.userDetails());
 		when(discountStrategyFactoryMock.getStrategy(Mockito.any(ItemType.class))).thenReturn(BillDataStub.billingMockObj(ItemType.GROCERY));
 		when(billDaoMock.persistBill(Mockito.any(BillDetails.class))).thenReturn(BillDataStub.billDetails());
         assertEquals(BillDataStub.billDetails(),billServiceMock.generateBill(BillDataStub.billRequestDto(ItemType.GROCERY)));
@@ -65,9 +58,6 @@ public class BillServiceTesting {
 	@Test(expected = NullPointerException.class)
 	public void generateBillGroceryNullTest() {
 		LOGGER.info("-- Testing [BillServiceTesting] [Method: generateBillGroceryNullTest()]");
-		when(userServiceMock.fetchUserByUserId(Mockito.any(String.class))).thenReturn(UserDataStub.userDetails());
         assertEquals(BillDataStub.billDetails(),billServiceMock.generateBill(BillDataStub.billRequestDto(null)));
     }
-
-
 }

@@ -9,5 +9,4 @@ import com.retailstore.domain.BillDetails;
  *
  */
 public interface BillDetailsRepository  extends JpaRepository<BillDetails, Long>{
-
 }

@@ -45,5 +45,4 @@ public class DiscountStrategyFactoryTest {
 		LOGGER.info("-- Testing [DiscountStrategyFactoryTesting] [Method: failStrategyTest()]");
         assertEquals(null,discountStrategyFactoryMock.getStrategy(null));
     }
-
 }

@@ -11,7 +11,6 @@ import org.springframework.validation.ObjectError;
  *
  */
 public class ValidationUtil {
-	
 	public static List<String> fromBindingErrors(BindingResult result) {
 		List<String> errorsList= new ArrayList<>();
 		

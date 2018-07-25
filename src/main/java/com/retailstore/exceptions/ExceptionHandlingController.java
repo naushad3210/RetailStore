@@ -34,7 +34,6 @@ public class ExceptionHandlingController {
     	ExceptionResponseDto response = new ExceptionResponseDto();
         response.setErrorCode("Not Found");
         response.setErrorMessage(ex.getMessage());
- 
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
     

@@ -21,7 +21,6 @@ import com.retailstore.exceptions.ResourceNotFoundException;
 public class DiscountStrategyFactory {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(DiscountStrategyFactory.class);
-	
 	/**
 	  * Use getStrategy method to get object of itemType
 	 * @param itemType
@@ -41,5 +40,4 @@ public class DiscountStrategyFactory {
 	      LOGGER.error("-- Inside [DiscountStrategyFactory] [Method: getStrategy()]] DiscountStrategy is NULL !!");
 	      return null;
 	   }
-
 }

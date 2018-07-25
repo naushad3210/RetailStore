@@ -4,8 +4,10 @@ import java.io.Serializable;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 import com.retailstore.enums.ItemType;
+import com.retailstore.enums.UserType;
 
 /**
  * @author mohammadnaushad
@@ -18,10 +20,21 @@ public class BillRequestDto implements Serializable {
 	@NotEmpty
 	private String userId;
 	@NotNull
+	@Positive
 	private Double billAmount;
 	@NotNull
 	private ItemType itemType;
+	@NotNull
+	private UserType userType;
 	
+	public UserType getUserType() {
+		return userType;
+	}
+
+	public void setUserType(UserType userType) {
+		this.userType = userType;
+	}
+
 	public String getUserId() {
 		return userId;
 	}
@@ -48,7 +61,7 @@ public class BillRequestDto implements Serializable {
 
 	@Override
 	public String toString() {
-		return "BillDto [userId=" + userId + ", billAmount=" + billAmount + ", itemType=" + itemType + "]";
+		return "BillRequestDto [userId=" + userId + ", billAmount=" + billAmount + ", itemType=" + itemType
+				+ ", userType=" + userType + "]";
 	}
-	
 }

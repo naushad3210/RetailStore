@@ -8,7 +8,5 @@ import com.retailstore.dto.request.BillRequestDto;
  *
  */
 public interface IBillService {
-	
 	public BillDetails generateBill(BillRequestDto billDto);
-
 }

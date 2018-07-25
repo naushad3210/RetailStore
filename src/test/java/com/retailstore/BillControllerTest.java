@@ -26,7 +26,6 @@ import com.retailstore.service.IBillService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class BillControllerTest {
-	
 	private static final Logger LOGGER = LoggerFactory.getLogger(BillControllerTest.class);
 	
 	@Mock

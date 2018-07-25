@@ -27,7 +27,5 @@ public abstract class DiscountStrategy {
 		}
 		LOGGER.info("-- User Not Eligible For Extra Discount!!");
 		return (double) extraDiscountAmount;
-		
 	}
-
 }

@@ -10,8 +10,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
@@ -26,9 +24,8 @@ public class BillDetails {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
-	@ManyToOne
-	@JoinColumn(name="userId", nullable=false)
-	private UserDetails userFk;	
+	@Column(name="userId")
+	private String userId;
 	
 	@Column(name="itemType")
 	@Enumerated(EnumType.STRING)
@@ -62,17 +59,6 @@ public class BillDetails {
 		this.id = id;
 	}
 
-
-	public UserDetails getUserFk() {
-		return userFk;
-	}
-
-
-	public void setUserFk(UserDetails userFk) {
-		this.userFk = userFk;
-	}
-
-
 	public ItemType getItemType() {
 		return itemType;
 	}
@@ -93,6 +79,12 @@ public class BillDetails {
 	}
 
 
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 	public Double getDiscountAmount() {
 		return discountAmount;
 	}
@@ -107,31 +99,25 @@ public class BillDetails {
 		return finalBillAmount;
 	}
 
-
 	public void setFinalBillAmount(Double finalBillAmount) {
 		this.finalBillAmount = finalBillAmount;
 	}
-
 
 	public Double getDiscountPercent() {
 		return discountPercent;
 	}
 
-
 	public void setDiscountPercent(Double discountPercent) {
 		this.discountPercent = discountPercent;
 	}
-
 
 	public Date getCreateDate() {
 		return createDate;
 	}
 
-
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -144,7 +130,7 @@ public class BillDetails {
 		result = prime * result + ((finalBillAmount == null) ? 0 : finalBillAmount.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((itemType == null) ? 0 : itemType.hashCode());
-		result = prime * result + ((userFk == null) ? 0 : userFk.hashCode());
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
 		return result;
 	}
 
@@ -186,13 +172,11 @@ public class BillDetails {
 			return false;
 		if (itemType != other.itemType)
 			return false;
-		if (userFk == null) {
-			if (other.userFk != null)
+		if (userId == null) {
+			if (other.userId != null)
 				return false;
-		} else if (!userFk.equals(other.userFk))
+		} else if (!userId.equals(other.userId))
 			return false;
 		return true;
 	}
-	
-	
 }

@@ -11,5 +11,4 @@ public class RetailStoreApplicationTest {
 	@Test
 	public void contextLoads() {
 	}
-
 }
